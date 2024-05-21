@@ -1,0 +1,10 @@
+python==3.7.5
+pandas 
+numpy 
+open_spiel
+numba
+ray
+tqdm
+seaborn
+icecream
+wandb

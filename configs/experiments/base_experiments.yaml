@@ -1,0 +1,49 @@
+description: linear_iiefgs
+
+game_names: 
+  - linear_game
+
+n_simulations: 10
+save_path:  ./results
+
+global_init_kwargs:
+  budget: 100_000
+  
+tuning_parameters:
+  tune_parameters: True
+  size_grid_search: 64
+  lowest_multiplier: 0.0000001
+  highest_multiplier: 10_000_000
+
+global_training_kwargs:
+  number_points: 50
+  first_point: 1_000
+  record_exploitabilities: True
+  verbose: 1
+  fix_log_interval: 1
+  log_interval: 1_000
+
+agents: 
+  - ./configs/agents/ixomd.yaml
+  - ./configs/agents/balanced_omd.yaml
+  - ./configs/agents/balanced_ftrl.yaml
+  - ./configs/agents/adaptive_ftrl.yaml
+  - ./configs/agents/f2trl.yaml
+
+wandb_args:
+  wandb_use: 1
+  wandb_project: 'IIEFG'
+  wandb_interval_log: False
+  mode: 'offline'
+
+seed_list:
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5 
+  - 4
+  - 3
+  - 2
+  - 1
+  - 0

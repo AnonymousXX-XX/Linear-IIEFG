@@ -1,0 +1,1 @@
+find ./wandb/ -name "offline-run-*" | xargs -n 10 -P 50 wandb sync
